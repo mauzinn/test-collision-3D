@@ -31,7 +31,6 @@ function init() {
         let FirstPerson = new FirstPersonControls(camera, renderer.domElement)
         FirstPerson.movementSpeed = 0.5
         FirstPerson.lookSpeed = 0.07
-        FirstPerson.lookVertical = false
         
 
     //Map
@@ -56,7 +55,7 @@ function init() {
             const box = new THREE.Mesh(boxMass, boxMaterial)
 
             const boxBody = new CANNON.Body({
-                shape: new CANNON.Box(new CANNON.Vec3(1, 1, 1)),
+                shape: new CANNON.Box(new CANNON.Vec3(0.6, 1, 0.6)),
                 mass: 1,
                 position: new CANNON.Vec3(1, 4, 0)
             })
@@ -73,7 +72,6 @@ function init() {
                 mass: 40,
                 position: new CANNON.Vec3(0, 9, 0)
             })
-
 
 
         function map() {
@@ -115,6 +113,7 @@ function init() {
 
         player.position.copy(playerBody.position)
         player.quaternion.copy(playerBody.quaternion)
+        
         playerBody.position.x = camera.position.x
         playerBody.position.z = camera.position.z
         camera.position.y = playerBody.position.y + 0.5
