@@ -70,7 +70,7 @@ function init() {
             const playerBody = new CANNON.Body({
                 shape: new CANNON.Box(new CANNON.Vec3(1, 1.5, 1)),
                 mass: 40,
-                position: new CANNON.Vec3(0, 9, 0)
+                position: new CANNON.Vec3(2, 3, 4)
             })
 
 
